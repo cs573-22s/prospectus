@@ -1,0 +1,94 @@
+\documentclass{proc}
+
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdfpagemode=FullScreen,
+    }
+
+\begin{document}
+
+\title{Exploring the US Affordable Housing Crisis}
+
+\author{Samantha Crepeau}
+
+\maketitle
+
+\section{Introduction}
+According to the National Low Income Housing Coalition, the United States needs 6.8 million more affordable housing units for extremely low income families. Affordable housing is housing that consumes less than 30\% of a household’s total income. There is no state or county where a full-time minimum wage employee can afford to rent a two-bedroom apartment \cite{NLIHCprob}. For those who are faced with high housing costs relative to their income, other stresses such as food security, health care, retirement also cause financial strain \cite{corradino}. These facts illustrate the severity of the affordable housing crisis in the US. 
+
+It is important that people are aware of the facts about the affordable housing crisis. Those who are not affected directly by it may benefit from understanding the situation that a significant number of their fellow citizens face, and those who are affected may benefit from knowing the facts about the situation they are burdened with. The aim of this project is to educate people about the affordable housing crisis through interactive data visualizations, with the goal for this knowledge to empower others through their newfound understanding of the situation. 
+
+\section{One-sentence description}
+Using US housing data to build a dashboard of visualizations that allow the user to explore and understand the current housing situation in various regions of the US with a focus on the affordable housing crisis.
+
+\section{Project Type}
+Interactive data visualization dashboard
+
+\section{Audience} 
+Those who are unaware of the affordable housing crisis will benefit from this project. This project will be most impactful for those who are looking to rent or buy, renters who cannot afford to become homeowners, and others affected by the lack of affordable housing. People who are not directly affected by the affordable housing crisis will be educated about an important issue experienced by others in the US. People who are directly affected will benefit from the knowledge and understanding of what they are experiencing. 
+
+\section{Approach}
+\subsection{Details}
+We will develop the data visualization dashboard with a focus on certain aspects of the affordable housing crisis. Example topics for visualizations include:
+\begin{itemize}
+    \item Average income vs. average rent/house price over time for different regions/zip codes 
+    \item Number of households paying greater than X\% of income on rent over time
+    \item Homeownership rate over time
+    \item Who actually owns rentals?
+\end{itemize}
+Visualizations will be created using D3 on a Github page. Visualizations will be accompanied by text explaining their context and how to interact with them if applicable. The text and visualizations together will tell a sort of story that summarizes important aspects of the affordable housing crisis, such as the ways in which it has worsened over time, who is most affected by it, and its origins.
+
+\subsection{Evidence for Success}
+An interactive data visualization dashboard is an excellent method to represent data from a variety of datasets while telling a cohesive story about the topic. The Government Finance Officers Association of the United States and Canada has a \href{https://www.gfoa.org/dashboard---housing-data}{dashboard} available that is similar to our design goals. It features an explanation of the data along with several interactive visualizations. We intend to develop something similar, with data visualizations sandwiched between bits of text explaining the context of the data and how to interact with the visualizations. 
+
+\section{Best-case Impact Statement}
+In the best case, we will produce a visually pleasing dashboard of data visualizations that educates the user on the affordable housing crisis and tells a cohesive story highlighting its major effects. The dashboard will focus on how these effects vary over time from region to region.
+
+\section{Major Milestones}
+\begin{itemize}
+    \item Review articles and research on the causes and effects of the affordable housing crisis
+    \item Using the literature review, determine which parts of the topic to focus on and plan the “story” that the dashboard should tell
+    \item Find housing data and experiment with the data by generating initial visualizations related to story focus
+    \item Determine which visualizations to use and how to design the dashboard based on the chosen story focus and experimentation
+    \item Generate the dashboard as designed and complete process book 
+\end{itemize}
+
+\section{Obstacles}
+
+\subsection{Major obstacles} % (if these fail, the project is over)
+\begin{itemize}
+    \item Single person team and somewhat lacking in JavaScript experience. This obstacle can be overcome with good time management and use of JS resources. 
+\end{itemize}
+
+\subsection{Minor obstacles}
+\begin{itemize}
+    \item Balancing quality vs. quantity of visualizations
+    \item Telling a cohesive story with data visualizations 
+\end{itemize}
+
+\section{Resources Needed}
+\begin{itemize}
+    \item Literature review on the affordable housing crisis in order to motivate the visualizations and story to be told by the dashboard
+    \item Code and data to generate visualizations
+\end{itemize}
+
+\section{5 Related Publications}
+\begin{itemize}
+    \item THE GAP: The Affordable Housing Gap Analysis 2021 by NLIHC. A report on the affordable housing crisis as of March 2021 \cite{gap}.
+    \item America’s Rental Housing 2020 by Harvard JCHS. A research report on the rental housing situation as of 2020 \cite{JCHSreport}.
+    \item “Who Owns Rental Properties, And Is It Changing?” by Hyojung Lee of Harvard JCHS. An article on rental property ownership \cite{lee}.
+    \item “Will Real Estate Ever Be Normal Again?” by Francesca Mari of the New York Times. An article concerning rising housing prices, the current housing market, and the future of real estate \cite{mari}.
+    \item The Future of Headship and Homeownership by Laurie Goodman and Jun Zhu of the Urban Institute. A research report on the “trajectory of the homeownership rate—where it has been, where it is going, who it has benefitted, and who it has left behind” \cite{urban}.
+\end{itemize}
+
+\section{Define Success}
+Once we determine the story to be told by the dashboard and have the data and background knowledge to do so, we will have what we need to actually create the dashboard. Success is characterized by having a functioning, interactive dashboard that educates the user on various aspects of the affordable housing crisis.
+
+\bibliographystyle{abbrv}
+\bibliography{prospectus}
+\end{document}

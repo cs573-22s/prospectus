@@ -1,3 +1,1 @@
-# Research project prospectus
-
-Files & examples you'll need to create a good prospectus.
+# Research project prospectus: Exploring the US Affordable Housing Crisis
