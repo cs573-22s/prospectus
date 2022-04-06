@@ -58,22 +58,27 @@ This project can be used in scenarios where consensus ranking is generated:
 \textit{What is your approach?}
 \end{quote}
 
-Our approach is to integrate PCP with idioms like strip plot or box plot. PCP will be used to visualize differences in different consensus rankings and box plot or strip plot will be used to analyze the agreement on each candidate by different base rankers. To visualize large dataset, we intend to extend this visualization by integrating fish eye view.
-
+Our approach is to integrate PCP with idioms like strip plot or box plot. PCP will be used to visualize differences in different consensus rankings and box plot or strip plot will be used to analyze the agreement on each candidate by different base rankers. To visualize large dataset, we intend to extend this visualization by integrating fish eye view. For detailed information on each candidate's ranking, we will integrate additional information view to get insight of how individual ranker ranked the candidate.
 
 \subsection{Evidence for Success}
 \begin{quote}
 \textit{Why do you think it will work?} 
 \end{quote}
 
-issues and how the lines or box plot will explain degree of consensus
+We think that the visualization will work because:
+\begin{enumerate}
+  \item Box-plot or strip plot will help explain the distribution of individual ranker's perspective on each candidate.
+  \item Combined box-plot or strip plot on all candidates will give the general idea of how much the consensus ranking agrees to all the base rankings combined.
+  \item Implementation of fish eye view will help inspect individual candidate
+\end{enumerate}
+% issues and how the lines or box plot will explain degree of consensus
 
 \section{Best-case Impact Statement}
 \begin{quote}
 \textit{In the best-case scenario, what would be the impact statement (conclusion statement) for this project? \cite{wijk2005value, pike2009science}}
 \end{quote}
 
-explain degree of consensus, understandability should be maximum.
+In the best case, our visualization will be able to explain degree of consensus in the consensus ranking. If there are multipe variations of consensus rankings, users will be able to differentiate between consensus rankings with more agreement consensus and rankings with less agreement.
 
 \section{Major Milestones}
 
