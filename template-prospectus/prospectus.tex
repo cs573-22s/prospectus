@@ -2,28 +2,37 @@
 
 \begin{document}
 
-\title{Prospectus Template}
+\title{Analyzing consensus in large datasets}
 
-\author{You, Me}
+\author{Hilson Shrestha, Kartik Nautiyal}
 
 \maketitle
 
-\section{Introduction}
 
 % Parallel Coordinates is a great choice when it comes to visualizing multi-variate numerical data. It can be used effectively in many domains to visualize how certain attributes align with other attributes. It has been used  to visualize rankings of candidates 
+\section{Introduction}
 
-Parallel Coordinates is a great choice when it comes to visualizing multi-variate numerical data. It can also be used to visualize various ranking problems like change in rankings of football clubs over time, or the ranking of apps in playstore over time. It can also be used in ranking scenarios like group decision making where decision makers build a consensus ranking that best represents the collection of base rankings.
+% Parallel Coordinates Plot (PCP) is a great choice when it comes to visualizing multi-variate numerical data. It can be used to visualize various ranking problems like change in rankings of football clubs over time, or the ranking of apps in playstore over time. It can also be used in ranking scenarios like group decision making where decision makers build a consensus ranking that best represents the collection of base rankings.
 
-With parallel coordinates in the ranking problem, it is easy to see how the individual candidate's position is ranked by different rankers including consensus ranking. However, fails to explain by how much the consensus ranking agrees or disagrees with the individual rankings. This is because of the main limitation of the parallel coordinates: Comparison is limited to adjcent axes. This problem has been tackled by Parallel Coordinates Plot with Color-coded Stacked Histograms \cite{php}. However, if there are large number of base rankings (axes), we would still need to scroll through all base rankings to see how consensus aligns with individual base rankings. In terms of parallel coordinates, it is not possible to compare an axis with all other axes combined.
 
-To solve this, we attempt to integrate parallel coordinates plot with other idioms like box plot or strip plot. We hope that our design will make it possible to analyze the agreement of base rankings with consensus ranking. 
+Parallel Coordinates Plot (PCP) is a great choice when it comes to visualizing multi-variate numerical data and It can be used to visualize ranking scenarios like group decision making where decision makers build a consensus ranking that best represents the collection of base rankings.
+
+Hindalong et. al \cite{hindalong2020towards} used the PCP techinque to visualize the ranking problem since it helps users to visualize how individual candidate is ranked by different rankers. However, to visualize how a consensus is reached is not possible using just PCP because of a limitation: Comparison is limited to adjacent axes. To solve this problem, the system integrates box plot and strip plots for the analysis of consensus ranking. However, the system was designed for limited number of rankers and candidates and does not scale up for large dataset.
+
+Another approach to visualize consensus is to use color coded stacked histograms \cite{bok2020augmenting}. While this technique allows comparison of non adjacent axes and could be effectively used to compare consensus ranking with all the base rankings, the system would not scale up for large dataset with large number of ranker. if there are large number of base rankings (axes), users will have to scroll through all the base rankings to see how consensus alights with it.
+% with box plot and strip plots for the analysis of this problem. 
+
+To solve this, we attempt to integrate parallel coordinates plot with other idioms like box plot or strip plot. We hope that our design will make it possible to analyze the degree of agreement of base rankings with consensus ranking. Furthermore, to visualze and inspect large dataset, we attempt to exploit spatial distortion techinque \cite{sarkar1993stretching}.
+
+
+% However, fails to explain by how much the consensus ranking agrees or disagrees with the individual rankings. This is because of the main limitation of the parallel coordinates: Comparison is limited to adjcent axes. This problem has been tackled by Parallel Coordinates Plot with Color-coded Stacked Histograms \cite{bok2020augmenting}. However, if there are large number of base rankings (axes), we would still need to scroll through all base rankings to see how consensus aligns with individual base rankings. In terms of parallel coordinates, it is not possible to compare an axis with all other axes combined.
+
 
 % 
 % Cite hindalong.
 
 \section{One-sentence description}
-Combining parallel coordinates with other idioms like strip plot or box plot, we attempt to make analysis of consensus ranking easier.
-
+Combining parallel coordinates with other idioms like strip plot or box plot, we attempt to make analysis of consensus ranking in large dataset much easier.
 
 \section{Project Type}
 Development
@@ -35,9 +44,13 @@ How does it meet their needs?
 What happens if their needs remain unmet?}
 \end{quote}
 
-- Any domain where consensus ranking needs to be generated
-
-- eg: scholarships, ranking of colleges and universities, admissions by admissions committee, competitions 
+This project can be used in scenarios where consensus ranking is generated:
+\begin{enumerate}
+  \item Ranking participants in competitions for final decision.
+  \item Ranking of colleges and universities
+  \item Ranking of students by admissions committee
+  \item Ranking of candidates for scholarships distribution 
+\end{enumerate}
 
 \section{Approach}
 \subsection{Details}
@@ -45,6 +58,7 @@ What happens if their needs remain unmet?}
 \textit{What is your approach?}
 \end{quote}
 
+Our approach is to integrate PCP with idioms like strip plot or box plot. PCP will be used to visualize differences in different consensus rankings and box plot or strip plot will be used to analyze the agreement on each candidate by different base rankers. To visualize large dataset, we intend to extend this visualization by integrating fish eye view.
 
 
 \subsection{Evidence for Success}
