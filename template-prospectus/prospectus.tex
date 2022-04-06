@@ -2,7 +2,7 @@
 
 \begin{document}
 
-\title{Analyzing consensus in large datasets}
+\title{Analyzing Consensus Rankings in Large Datasets}
 
 \author{Hilson Shrestha, Kartik Nautiyal}
 
@@ -14,16 +14,15 @@
 
 % Parallel Coordinates Plot (PCP) is a great choice when it comes to visualizing multi-variate numerical data. It can be used to visualize various ranking problems like change in rankings of football clubs over time, or the ranking of apps in playstore over time. It can also be used in ranking scenarios like group decision making where decision makers build a consensus ranking that best represents the collection of base rankings.
 
+Parallel Coordinates Plot (PCP) is a great choice when it comes to visualizing multi-variate numerical data and it can be used to visualize ranking scenarios like group-decision making where decision-makers build a consensus ranking that best represents the collection of base rankings.
 
-Parallel Coordinates Plot (PCP) is a great choice when it comes to visualizing multi-variate numerical data and It can be used to visualize ranking scenarios like group decision making where decision makers build a consensus ranking that best represents the collection of base rankings.
+Hindalong et. al \cite{hindalong2020towards} used the PCP technique to visualize the ranking problem since it helps users to visualize how individual candidate is ranked by different rankers. However, to visualize how a consensus is reached is not possible using just PCP because of a limitation: Comparison is limited to adjacent axes. To solve this problem, the system integrates box plots and strip plots for the analysis of consensus ranking. However, the system was designed for a limited number of rankers and candidates and does not scale up for a large dataset.
 
-Hindalong et. al \cite{hindalong2020towards} used the PCP techinque to visualize the ranking problem since it helps users to visualize how individual candidate is ranked by different rankers. However, to visualize how a consensus is reached is not possible using just PCP because of a limitation: Comparison is limited to adjacent axes. To solve this problem, the system integrates box plot and strip plots for the analysis of consensus ranking. However, the system was designed for limited number of rankers and candidates and does not scale up for large dataset.
+Another approach to visualizing consensus is to use color-coded stacked histograms \cite{bok2020augmenting}. While this technique allows the comparison of non-adjacent axes and could be effectively used to compare consensus ranking with all the base rankings, the system would not scale up for a large dataset with a large number of rankers. Users will have to scroll through all the base rankings to see how consensus alights with it.
 
-Another approach to visualize consensus is to use color coded stacked histograms \cite{bok2020augmenting}. While this technique allows comparison of non adjacent axes and could be effectively used to compare consensus ranking with all the base rankings, the system would not scale up for large dataset with large number of ranker. if there are large number of base rankings (axes), users will have to scroll through all the base rankings to see how consensus alights with it.
 % with box plot and strip plots for the analysis of this problem. 
 
-To solve this, we attempt to integrate parallel coordinates plot with other idioms like box plot or strip plot. We hope that our design will make it possible to analyze the degree of agreement of base rankings with consensus ranking. Furthermore, to visualze and inspect large dataset, we attempt to exploit spatial distortion techinque \cite{sarkar1993stretching}.
-
+To solve this, we attempt to integrate parallel coordinates plots with idioms like box plots or strip plots. We hope that our design will make it possible to analyze the degree of agreement of base rankings with consensus ranking. Furthermore, to visualize and inspect a large dataset, we attempt to exploit the spatial distortion technique \cite{sarkar1993stretching}.
 
 % However, fails to explain by how much the consensus ranking agrees or disagrees with the individual rankings. This is because of the main limitation of the parallel coordinates: Comparison is limited to adjcent axes. This problem has been tackled by Parallel Coordinates Plot with Color-coded Stacked Histograms \cite{bok2020augmenting}. However, if there are large number of base rankings (axes), we would still need to scroll through all base rankings to see how consensus aligns with individual base rankings. In terms of parallel coordinates, it is not possible to compare an axis with all other axes combined.
 
@@ -58,7 +57,7 @@ This project can be used in scenarios where consensus ranking is generated:
 \textit{What is your approach?}
 \end{quote}
 
-Our approach is to integrate PCP with idioms like strip plot or box plot. PCP will be used to visualize differences in different consensus rankings and box plot or strip plot will be used to analyze the agreement on each candidate by different base rankers. To visualize large dataset, we intend to extend this visualization by integrating fish eye view. For detailed information on each candidate's ranking, we will integrate additional information view to get insight of how individual ranker ranked the candidate.
+Our approach is to integrate PCP with idioms like strip plot or box plot. PCP will be used to visualize differences in different consensus rankings and box plot or strip plot will be used to analyze the agreement on each candidate by different base rankers. To visualize large dataset, we intend to extend this visualization by integrating fish eye view \cite{tominski2006fisheye}. For detailed information on each candidate's ranking, we will integrate additional information view to get insight of how individual ranker ranked the candidate.
 
 \subsection{Evidence for Success}
 \begin{quote}
@@ -75,27 +74,34 @@ We think that the visualization will work because:
 
 \section{Best-case Impact Statement}
 \begin{quote}
-\textit{In the best-case scenario, what would be the impact statement (conclusion statement) for this project? \cite{wijk2005value, pike2009science}}
+\textit{In the best-case scenario, what would be the impact statement (conclusion statement) for this project?}
 \end{quote}
 
 In the best case, our visualization will be able to explain degree of consensus in the consensus ranking. If there are multipe variations of consensus rankings, users will be able to differentiate between consensus rankings with more agreement consensus and rankings with less agreement.
 
 \section{Major Milestones}
-
-1. Generate a dataset with large number of rankers and candidates; and multiple consensus rankings;
-2. Implementation of visualization... (hover to view each base ranking)
-3. Allow user to manipulate consensus ranking and see how the degree of agreement or disagreement changes
-4. Fish eye view for large dataset exploration
+\begin{enumerate}
+  \item Generate a dataset with large number of rankers and candidates. 
+  \item Generate multiple consensus rankings for comparison.
+  \item Implementation of visualization with PCP and box-plot or strip plot
+  \item Implementation of hover on each ranking to visualize base ranker's decision on each candidate.
+  \item Fish eye view for large dataset exploration
+\end{enumerate}
 
 \section{Obstacles}
 
 \subsection{Major obstacles} % (if these fail, the project is over)
-2. interactive visualization of agreement on each candidate
+\begin{enumerate}
+  \item Interactive visualization of agreement on each candidate
+  \item Generate dataset of rankers and candidates with atleast one consensus ranking
+\end{enumerate}
 
 \subsection{Minor obstacles}
-1. Fisheye view
-2. Asthetic aspect
-3. manipulate ranking.
+\begin{enumerate}
+  \item Fisheye view 
+  \item Manipulate ranking by user
+  % \item Asthetics
+\end{enumerate}
 
 \section{Resources Needed}
 \begin{quote}
@@ -103,18 +109,27 @@ In the best case, our visualization will be able to explain degree of consensus 
 \end{quote}
 
 1. Code to generate large number of base rankings which have atleast some agreement 
-2. 
+2. Code to generate different variations of consensus rankings
+3. Test the clutter/understandability of box-plot vs strip plot
 
 \section{5 Related Publications}
 \begin{quote}
-\textit{List 5 major publications that are most relevant to this project, and how they are related (sample citation \cite{wijk2005value}).}
+\textit{List 5 major publications that are most relevant to this project, and how they are related}
 \end{quote}
+
+\begin{enumerate}
+  \item Hindalong applied combination of different idioms to support group decision making for limited number of rankers and alternatives \cite{hindalong2020towards}
+  \item Sarkar proposes a metaphor of rubber sheet stretching for viewing large dataset in small space \cite{sarkar1993stretching}
+  \item Tomininski implemented Fisheye view in tree graphs \cite{tominski2006fisheye}
+  \item Bok extends parallel coordinates with color coded stacked histograms plot to overcome 2 major problems of PCP \cite{bok2020augmenting}
+  \item Gratzl ranks items based on attributes with different scales and includes PCP for comparison \cite{gratzl2013lineup}
+\end{enumerate}
 
 \section{Define Success}
 \begin{quote}
 \textit{What is the minimum amount of work necessary for this work be publishable?}
 \end{quote}
-
+If we can extend this project with user study to see if users can understand the degree of agreement in consensus ranking, then we believe we will have enough amount of work for publication.
 \bibliographystyle{abbrv}
 \bibliography{prospectus}
 \end{document}
